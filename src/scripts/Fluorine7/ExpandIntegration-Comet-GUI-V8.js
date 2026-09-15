@@ -10,7 +10,6 @@
 
 #engine v8
 
-#script-id   Fluorine7ExpandIntegration
 #feature-id  Fluorine7ExpandIntegration : Batch Processing > Expand Integration
 #feature-info  Sliding-window image integration with configurable ImageIntegration parameters.<br/>\
 Requires PixInsight 1.9.4 or later.<br/>\

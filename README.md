@@ -26,7 +26,7 @@ Three batch-processing scripts for **PixInsight 1.9.4 or later** and its V8 Java
 3. Open `Resources > Updates > Check for Updates` and install **Fluorine7 PixInsight Batch Scripts**.
 4. Restart PixInsight if requested.
 
-Until the repository has a valid Certified PixInsight Developer signature, PixInsight may warn that its authenticity cannot be verified. Review the source and package before accepting an unsigned update.
+Release 1.0.1 includes script signatures and a signed update index using the Fluorine7 Certified PixInsight Developer identity. Install the latest PixInsight developer database updates and restart PixInsight before checking signature verification.
 
 ### Manual installation
 
@@ -98,7 +98,7 @@ See each source file's copyright and SPDX notice. The GPL script is not relicens
 3. 打开 `Resources > Updates > Check for Updates`，安装 **Fluorine7 PixInsight Batch Scripts**。
 4. 如有提示，重启 PixInsight。
 
-在仓库取得有效的 Certified PixInsight Developer 签名前，PixInsight 可能提示无法验证仓库真实性。接受未签名更新前，请先检查源码和安装包。
+1.0.1 版本包含使用 Fluorine7 Certified PixInsight Developer 身份生成的脚本签名和更新索引签名。请安装最新的 PixInsight 开发者数据库更新并重启，再检查签名验证结果。
 
 ### 手动安装
 

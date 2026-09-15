@@ -37,7 +37,6 @@
 
 #engine v8
 
-#script-id Fluorine7BatchImageKeywordEditor
 #feature-id Fluorine7BatchImageKeywordEditor : Batch Processing > Batch Image Keyword Editor
 
 #feature-info A modular batch editor for FITS-compatible keywords in FITS and XISF files.<br/>\

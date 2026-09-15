@@ -3,8 +3,8 @@
    <package>
       <name>Fluorine7BatchScripts</name>
       <title>Fluorine7 PixInsight Batch Scripts</title>
-      <version>1.0.0</version>
-      <release-date>2026-08-13</release-date>
+      <version>1.0.1</version>
+      <release-date>2026-09-15</release-date>
       <description>
          <p>Three V8-compatible batch-processing scripts for PixInsight 1.9.4 and later.</p>
          <p>Includes Rename By FITS Header, Expand Integration, and Batch Image Keyword Editor.</p>

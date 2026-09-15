@@ -2,7 +2,7 @@
 set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-name="Fluorine7BatchScripts-1.0.0.zip"
+name="Fluorine7BatchScripts-1.0.1.zip"
 build_dir="$root/build"
 package="$root/$name"
 

@@ -10,7 +10,6 @@
 
 #engine v8
 
-#script-id Fluorine7RenameByFITSHeader
 #feature-id Fluorine7RenameByFITSHeader : Batch Processing > Rename By FITS Header
 #feature-info Batch copy or rename FITS/XISF images using customizable header keyword templates.<br/>\
 Requires PixInsight 1.9.4 or later.<br/>\
