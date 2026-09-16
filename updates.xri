@@ -8,7 +8,7 @@
       <p>Repository: https://github.com/Fluorine7/Fluorine7-PixInsight-Scripts</p>
    </description>
    <platform os="all" arch="noarch" version="1.9.4:2.0.0">
-      <package fileName="Fluorine7BatchScripts-1.0.3.zip" sha1="e02c7dd9ef591f1bb9349f1c531a0f0091581fe3" type="script" releaseDate="20260916">
+      <package fileName="Fluorine7BatchScripts-1.0.3.zip" sha1="e02c7dd9ef591f1bb9349f1c531a0f0091581fe3" type="script" releaseDate="20260916091344">
          <title>Fluorine7 PixInsight Batch Scripts 1.0.3</title>
          <remove>src/scripts/rename_xisf_fits.js,src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.js,src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.xsgn,src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.js,src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.xsgn</remove>
          <description>
@@ -24,4 +24,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="Fluorine7" timestamp="2026-09-16T09:11:13.860Z" encoding="Base64">8rpN2CB2n84yFocQGFCUB/SLg4RpRmXVm/dWaT//H2kVnavVsi9V3FNBkEbS5L57oB85JjAq6MQ/XvlEE8tMCA==</Signature>
+<Signature developerId="Fluorine7" timestamp="2026-09-16T09:14:39.025Z" encoding="Base64">ZJogbGY6A2u4KrFsmgROIaCFiZrq71vQGnu7tjtqI5B6mcKMHVQl2qOkZrMU73wCB8alxhmw7CTgqsVeB+ApCg==</Signature>
