@@ -8,11 +8,11 @@
       <p>Repository: https://github.com/Fluorine7/Fluorine7-PixInsight-Scripts</p>
    </description>
    <platform os="all" arch="noarch" version="1.9.4:2.0.0">
-      <package fileName="Fluorine7BatchScripts-1.0.2.zip" sha1="6243b8f8dd36409860dc8acf37c7838e31da38cf" type="script" releaseDate="20260916">
-         <title>Fluorine7 PixInsight Batch Scripts 1.0.2</title>
-         <remove>src/scripts/rename_xisf_fits.js src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.js src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.xsgn src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.js src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.xsgn</remove>
+      <package fileName="Fluorine7BatchScripts-1.0.3.zip" sha1="e02c7dd9ef591f1bb9349f1c531a0f0091581fe3" type="script" releaseDate="20260916">
+         <title>Fluorine7 PixInsight Batch Scripts 1.0.3</title>
+         <remove>src/scripts/rename_xisf_fits.js,src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.js,src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.xsgn,src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.js,src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.xsgn</remove>
          <description>
-            <p>Adds Batch XISF Cleaner 1.0, updates Rename By FITS Header to 1.3, and standardizes script filenames. All four scripts are signed.</p>
+            <p>Fixes removal of obsolete script filenames and signatures to prevent duplicate menu entries after upgrading. All four scripts are unchanged from 1.0.2.</p>
             <ul>
                <li>Rename By FITS Header 1.3</li>
                <li>Expand Integration 1.3</li>
@@ -24,4 +24,4 @@
       </package>
    </platform>
 </xri>
-<Signature developerId="Fluorine7" timestamp="2026-09-16T09:06:01.562Z" encoding="Base64">ul40UoNzNSUUENSEv4xmVKuUqBWY+kk32v48AMt7djAtho2Nhhl8B/n2TUfrKExuqEcITbsIGc+5y3lsj0rdBw==</Signature>
+<Signature developerId="Fluorine7" timestamp="2026-09-16T09:11:13.860Z" encoding="Base64">8rpN2CB2n84yFocQGFCUB/SLg4RpRmXVm/dWaT//H2kVnavVsi9V3FNBkEbS5L57oB85JjAq6MQ/XvlEE8tMCA==</Signature>

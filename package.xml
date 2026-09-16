@@ -3,7 +3,7 @@
    <package>
       <name>Fluorine7BatchScripts</name>
       <title>Fluorine7 PixInsight Batch Scripts</title>
-      <version>1.0.2</version>
+      <version>1.0.3</version>
       <release-date>2026-09-16</release-date>
       <description>
          <p>Four V8-compatible batch-processing scripts for PixInsight 1.9.4 and later.</p>
