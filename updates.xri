@@ -8,19 +8,20 @@
       <p>Repository: https://github.com/Fluorine7/Fluorine7-PixInsight-Scripts</p>
    </description>
    <platform os="all" arch="noarch" version="1.9.4:2.0.0">
-      <package fileName="Fluorine7BatchScripts-1.0.1.zip" sha1="358e9efae77792a596906f04b50395a05383012c" type="script" releaseDate="20260915">
-         <title>Fluorine7 PixInsight Batch Scripts 1.0.1</title>
-         <remove>src/scripts/rename_xisf_fits.js</remove>
+      <package fileName="Fluorine7BatchScripts-1.0.2.zip" sha1="6243b8f8dd36409860dc8acf37c7838e31da38cf" type="script" releaseDate="20260916">
+         <title>Fluorine7 PixInsight Batch Scripts 1.0.2</title>
+         <remove>src/scripts/rename_xisf_fits.js src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.js src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.xsgn src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.js src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.xsgn</remove>
          <description>
-            <p>Signed release with corrected script identification directives for PixInsight 1.9.4 and later.</p>
+            <p>Adds Batch XISF Cleaner 1.0, updates Rename By FITS Header to 1.3, and standardizes script filenames. All four scripts are signed.</p>
             <ul>
-               <li>Rename By FITS Header 1.2</li>
+               <li>Rename By FITS Header 1.3</li>
                <li>Expand Integration 1.3</li>
                <li>Batch Image Keyword Editor 4.0</li>
+               <li>Batch XISF Cleaner 1.0</li>
             </ul>
             <p>All scripts are installed under Script &gt; Batch Processing.</p>
          </description>
       </package>
    </platform>
 </xri>
-<Signature developerId="Fluorine7" timestamp="2026-09-15T11:52:44.935Z" encoding="Base64">VM99XkwUEXJJlt9a4uQMb7RARgjs92yYHaytFLSoNCkbgWfwwsDM/iO29SIR2a74WsNAD9qLw2tv7WIMK62YBg==</Signature>
+<Signature developerId="Fluorine7" timestamp="2026-09-16T09:06:01.562Z" encoding="Base64">ul40UoNzNSUUENSEv4xmVKuUqBWY+kk32v48AMt7djAtho2Nhhl8B/n2TUfrKExuqEcITbsIGc+5y3lsj0rdBw==</Signature>

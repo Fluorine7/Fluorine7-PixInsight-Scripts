@@ -3,18 +3,19 @@
    <package>
       <name>Fluorine7BatchScripts</name>
       <title>Fluorine7 PixInsight Batch Scripts</title>
-      <version>1.0.1</version>
-      <release-date>2026-09-15</release-date>
+      <version>1.0.2</version>
+      <release-date>2026-09-16</release-date>
       <description>
-         <p>Three V8-compatible batch-processing scripts for PixInsight 1.9.4 and later.</p>
-         <p>Includes Rename By FITS Header, Expand Integration, and Batch Image Keyword Editor.</p>
+         <p>Four V8-compatible batch-processing scripts for PixInsight 1.9.4 and later.</p>
+         <p>Includes Rename By FITS Header, Expand Integration, Batch Image Keyword Editor, and Batch XISF Cleaner.</p>
       </description>
       <file-list>
-         <file>src/scripts/Fluorine7/rename_xisf_fits_v1.2_V8.js</file>
-         <file>src/scripts/Fluorine7/ExpandIntegration-Comet-GUI-V8.js</file>
+         <file>src/scripts/Fluorine7/RenameByFITSHeader.js</file>
+         <file>src/scripts/Fluorine7/ExpandIntegration.js</file>
          <file>src/scripts/Fluorine7/BatchImageKeywordEditor.js</file>
          <file>src/scripts/Fluorine7/LICENSES/MIT.txt</file>
          <file>src/scripts/Fluorine7/LICENSES/GPL-3.0-only.txt</file>
+         <file>src/scripts/Fluorine7/BatchXISFCleaner.js</file>
       </file-list>
    </package>
 </xpkg>

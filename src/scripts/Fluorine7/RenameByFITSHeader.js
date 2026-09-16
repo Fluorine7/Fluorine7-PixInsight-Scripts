@@ -1,5 +1,5 @@
 /*
- * Rename By FITS Header v1.2
+ * Rename By FITS Header v1.3
  *
  * Copyright (c) 2025-2026 Fluorine Zhu
  * SPDX-License-Identifier: MIT
@@ -15,7 +15,7 @@
 Requires PixInsight 1.9.4 or later.<br/>\
 Copyright &copy; 2025-2026, Fluorine Zhu.
 
-#define VERSION "1.2"
+#define VERSION "1.3"
 #define TITLE   "Rename By FITS Header"
 #define DEFAULT_TEMPLATE "{OBJECT}_{FILTER}_{timestamp}"
 
@@ -143,6 +143,12 @@ function readHeaderFromFile(filePath) {
    }
 
    try {
+      if (ext.toLowerCase() === ".xisf" && imgDesc.length > 1) {
+         var multiImageError = new Error("XISF contains " + imgDesc.length +
+            " images. Run Batch XISF Cleaner first, then add the cleaned file here. Original retained.");
+         multiImageError.skipMultiImageXISF = true;
+         throw multiImageError;
+      }
       var keywords = {};
       var fitsKeywords = fi.keywords;
       for (var i = 0; i < fitsKeywords.length; ++i) {
@@ -264,7 +270,7 @@ run(files, params)
        !File.directoryExists(params.outputDirectory))
       File.createDirectory(params.outputDirectory, true);
 
-   var ok = 0, err = 0, skipped = 0;
+   var ok = 0, err = 0, skipped = 0, multiImageSkipped = 0;
    var reservedPaths = Object.create(null);
 
    for (var i = 0; i < files.length; ++i) {
@@ -312,8 +318,14 @@ run(files, params)
          }
          ++ok;
       } catch (e) {
-         console.warningln("   ✗ FAILED: ", e.toString());
-         ++err;
+         if (e.skipMultiImageXISF === true) {
+            console.noteln("   ⊙ Skipped: ", e.message);
+            ++skipped;
+            ++multiImageSkipped;
+         } else {
+            console.warningln("   ✗ FAILED: ", e.toString());
+            ++err;
+         }
       } finally {
          // V8 garbage collection cannot be forced. Yield to PixInsight so the
          // Abort button and user interface remain responsive.
@@ -326,8 +338,18 @@ run(files, params)
    console.noteln(format("Done: %d ok, %d errors, %d skipped%s",
       ok, err, skipped, params.dryRun ? "  (dry-run)" : ""));
    console.noteln("================================================================");
+   return { errors: err, multiImageSkipped: multiImageSkipped };
 }
 };
+
+function showMultiImageNotice(count, errors, action) {
+   var message = action + ": " + count + " multi-image XISF file(s) skipped; originals retained.\n\n" +
+      "Run Batch Processing > Batch XISF Cleaner first. Select the image to retain, then add the cleaned single-image files to Rename By FITS Header.";
+   if (errors > 0)
+      message += "\n\n" + errors + " other file(s) encountered errors. See the file list or console for details.";
+   (new MessageBox(message, TITLE, errors > 0 ? StdIcon.Warning : StdIcon.Information,
+                   StdButton.Ok)).execute();
+}
 
 // ---------- 对话框 ----------
 var MainDialog = class extends Dialog
@@ -348,6 +370,7 @@ constructor()
    this.helpLabel.useRichText = true;
    this.helpLabel.text = "<b>" + TITLE + "</b>"
            + "<p>Customize filename using template with keywords like {OBJECT}, {FILTER}, {timestamp}, etc.</p>"
+           + "<p>Multi-image XISF files are skipped. Run BatchXISFCleaner (Batch XISF Cleaner) first, then add the cleaned single-image files here.</p>"
            + "<p><i>Default: {OBJECT}_{FILTER}_{timestamp}</i></p>";
 
    this.filesTreeBox = new TreeBox(this);
@@ -626,7 +649,7 @@ constructor()
          result.newPath = applyForcedSuffix(result.newPath, suffix);
          self.previewEdit.text = File.extractNameAndSuffix(result.newPath);
       } catch(e) {
-         self.previewEdit.text = "Error: " + e.message;
+         self.previewEdit.text = (e.skipMultiImageXISF === true ? "Skipped: " : "Error: ") + e.message;
       }
    };
 
@@ -652,7 +675,7 @@ constructor()
       }
 
       var reservedPaths = Object.create(null);
-      var errors = 0;
+      var errors = 0, multiImageSkipped = 0;
       self.filesTreeBox.canUpdate = false;
       try {
          for (var i = 0; i < self.fileList.length; ++i) {
@@ -671,9 +694,15 @@ constructor()
                node.setText(1, File.extractNameAndSuffix(target));
                node.setToolTip(1, target);
             } catch (e) {
-               node.setText(1, "ERROR: " + e.message);
-               node.setToolTip(1, e.toString());
-               ++errors;
+               if (e.skipMultiImageXISF === true) {
+                  node.setText(1, "Skipped: multiple images; run Batch XISF Cleaner first.");
+                  node.setToolTip(1, e.message);
+                  ++multiImageSkipped;
+               } else {
+                  node.setText(1, "ERROR: " + e.message);
+                  node.setToolTip(1, e.toString());
+                  ++errors;
+               }
             }
             processEvents();
          }
@@ -682,7 +711,9 @@ constructor()
       }
 
       // Column widths remain at the 50/50 split maintained by onResize.
-      if (errors > 0)
+      if (multiImageSkipped > 0)
+         showMultiImageNotice(multiImageSkipped, errors, "Preview completed");
+      else if (errors > 0)
          (new MessageBox(format("Preview completed with %d error(s).", errors),
                          TITLE, StdIcon.Warning, StdButton.Ok)).execute();
    };
@@ -732,7 +763,9 @@ constructor()
 
       try {
          var engine = new RenameEngine();
-         engine.run(self.fileList, params);
+         var summary = engine.run(self.fileList, params);
+         if (summary.multiImageSkipped > 0)
+            showMultiImageNotice(summary.multiImageSkipped, summary.errors, "Execution completed");
       } catch(e) {
          console.criticalln("Fatal error: " + e.toString());
       }
