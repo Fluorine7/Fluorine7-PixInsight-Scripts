@@ -31,7 +31,9 @@ Release 1.0.2 includes script signatures and a signed update index using the Flu
 
 ### Manual installation
 
-Download the current package archive from this repository, extract it, then use `Script > Feature Scripts... > Add` and select its `src/scripts/Fluorine7` directory.
+Download the [current package (1.0.3)](Fluorine7BatchScripts-1.0.3.zip), extract it, then use `Script > Feature Scripts... > Add` and select its `src/scripts/Fluorine7` directory.
+
+Superseded packages are kept in [`archive/`](archive/) for reference. Only the latest package is kept in the repository root.
 
 ### Rename By FITS Header
 
@@ -115,7 +117,9 @@ See each source file's copyright and SPDX notice. The GPL script is not relicens
 
 ### 手动安装
 
-下载并解压当前安装包，然后打开 `Script > Feature Scripts... > Add`，选择其中的 `src/scripts/Fluorine7` 目录。
+下载并解压[最新安装包（1.0.3）](Fluorine7BatchScripts-1.0.3.zip)，然后打开 `Script > Feature Scripts... > Add`，选择其中的 `src/scripts/Fluorine7` 目录。
+
+旧版安装包统一保存在 [`archive/`](archive/) 目录中供历史查阅，仓库根目录只保留最新安装包。
 
 ### Batch XISF Cleaner
 
