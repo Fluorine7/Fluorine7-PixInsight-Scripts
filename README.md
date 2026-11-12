@@ -31,7 +31,9 @@ Release 1.0.2 includes script signatures and a signed update index using the Flu
 
 ### Manual installation
 
-Download the [current package (1.0.3)](Fluorine7BatchScripts-1.0.3.zip), extract it, then use `Script > Feature Scripts... > Add` and select its `src/scripts/Fluorine7` directory.
+Download the [current package (1.0.4)](Fluorine7BatchScripts-1.0.4.zip), extract it, then use `Script > Feature Scripts... > Add` and select its `src/scripts/Fluorine7` directory.
+
+Release 1.0.4 corrects the installation layout: packages deploy only under `src/scripts/Fluorine7/`. The `package.xml` manifest is retained only in the source repository. Script code and script signatures are unchanged.
 
 Superseded packages are kept in [`archive/`](archive/) for reference. Only the latest package is kept in the repository root.
 
@@ -117,7 +119,9 @@ See each source file's copyright and SPDX notice. The GPL script is not relicens
 
 ### 手动安装
 
-下载并解压[最新安装包（1.0.3）](Fluorine7BatchScripts-1.0.3.zip)，然后打开 `Script > Feature Scripts... > Add`，选择其中的 `src/scripts/Fluorine7` 目录。
+下载并解压[最新安装包（1.0.4）](Fluorine7BatchScripts-1.0.4.zip)，然后打开 `Script > Feature Scripts... > Add`，选择其中的 `src/scripts/Fluorine7` 目录。
+
+1.0.4 版本修正安装目录：压缩包只向 `src/scripts/Fluorine7/` 部署文件，`package.xml` 清单仅保留在源码仓库中。脚本代码及脚本签名未变。
 
 旧版安装包统一保存在 [`archive/`](archive/) 目录中供历史查阅，仓库根目录只保留最新安装包。
 
